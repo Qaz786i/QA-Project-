@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block body%}
+        <h2>Home</h2>
+        {% if num == 0 and num1 == 0%}
+        <p> You currently have no employees and no jobs available</p>
+        {% else %}
+        <p>You have {{ num }} Employee(s) and {{ num_job }} Job(s) available</p>
+        {% endif %}
+        <h3>Employees</h3>
+        {% for Employee in employees %}
+        {{ Employee.__str__() + " " + Employee.project.__str__() }} || <a href="{{ url_for('update_employee', pk=Employee.pk) }}">Update Employee</a> || <a href="{{ url_for('delete_employee', pk=Employee.pk) }}">Delete Employee</a>
+        <br>
+        {% endfor %}
+        <h3>Jobs</h3>
+        {% for Job in jobs %}
+        {{ Job.__str__() + " " + Job.project.__str__() }} ||  <a href="{{ url_for('update_job', pk=Job.pk) }}">Update Job</a>  || <a href="{{ url_for('delete_job', pk=Job.pk) }}">Delete Job</a>
+        <br>
+        {% endfor %}
+        <h3>Employements</h3>
+        {% for Employment in employed %}
+        {{ Employment.__str__() + " " + Employment.project.__str__() }} ||  <a href="{{ url_for('update_employment', pk=Employment.pk) }}">Update Employment</a>  || <a href="{{ url_for('delete_employment', pk=Employment.pk) }}">Delete Employment</a>
+        <br>
+        {% endfor %}
+{% endblock body%}
+
+
+
+
+        
