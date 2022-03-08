@@ -3,10 +3,10 @@ from wtforms import StringField, IntegerField, SelectField, DateField, SubmitFie
 
 
 class AddEmployee(FlaskForm):
-    first_name = StringField("Employee's First Name")
-    last_name = StringField("Employee's Last Name")
-    email = StringField("Employee's email address")
-    address = StringField("Employee's home address")
+    first_name = StringField("Employees First Name")
+    last_name = StringField("Employees Last Name")
+    email = StringField("Employees email address")
+    address = StringField("Employees home address")
     submit = SubmitField("Add Employee")
 
 class AddJob(FlaskForm):

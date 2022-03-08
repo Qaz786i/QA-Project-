@@ -38,13 +38,7 @@ def create_job():
         db.session.commit()
         return redirect(url_for('home'))
     return render_template('add_job.html', form =form)
-
-
-@app.route('/employment')
-def employment_page():
-    num_employees = Employment.query.count()
-    employed = Employment.query.all()
-    return render_template('employment.html', num_employees = num_employees, employed = employed)    
+  
 
 @app.route('/create-employment', methods = ['GET', 'POST'])
 def create_employment():
@@ -103,7 +97,7 @@ def delete_employee(pk):
     db.session.delete(employee)
     db.session.commit()
     return redirect(url_for('home'))
-
+    
 @app.route('/update-job/<int:pk>', methods = ['GET', 'POST'])
 def update_job(pk):
     job = Job.query.get(pk)
@@ -114,7 +108,7 @@ def update_job(pk):
         db.session.commit()
         return redirect(url_for('home'))
     return render_template('add_job.html', form = form, ptitle = "Update Job")
-
+    
 @app.route('/delete-job/<int:pk>', methods = ['GET', 'POST'])
 def delete_job(pk):
     job = Job.query.get(pk)
