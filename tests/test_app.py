@@ -85,22 +85,22 @@ class Test_create_employment(TestBase):
 
 class Test_update_employee(TestBase):
     def test_create_get(self):
-        response = self.client.get(url_for('update_employment', pk=3))
+        response = self.client.get(url_for('update_employee', pk=1))
         self.assert200(response)
          
 
     def test_create_post(self):
         response = self.client.post(
-            url_for('update_employment', pk=3),
+            url_for('update_employee', pk=1),
             data = dict(first_name = "John", last_name = "Wick", email = "jwick'yes.com", address = "1 Wick Way"),
             follow_redirects = True
         )
         self.assert200(response)
-        self.assertIn(b'Jack', response.data)
+        self.assertIn(b'John', response.data)
 
 class Test_update_job(TestBase):
     def test_create_get(self):
-        response = self.client.get(url_for('update_job'), pk=2)
+        response = self.client.get(url_for('update_job', pk=2))
         self.assert200(response)
         self.assertIn(b'Job Title', response.data) 
 
@@ -122,29 +122,29 @@ class Test_update_employment(TestBase):
 
     def test_create_post(self):
         response = self.client.post(
-            url_for('update_employment', pk=1),
-            data = dict(fk_student = 3, fk_class = 3),
+            url_for('update_employment', pk=3),
+            data = dict(fk_employee = 2, fk_job = 2),
             follow_redirects = True
         )
         self.assert200(response)
-        self.assertIn(b'3', response.data)
+        self.assertIn(b'has been employed for the role', response.data)
 
 class Test_delete_employee(TestBase):
     def test_create_get(self):
         response = self.client.get(url_for('delete_employee', pk=1), follow_redirects = True )
         self.assert200(response)
-        self.assertNotIn(b'Employees First Name', response.data)
+        self.assertNotIn(b'Address', response.data)
 
 
 class Test_delete_job(TestBase):
     def test_create_get(self):
-        response = self.client.get(url_for('delete_job', pk=1),follow_redirects = True)
+        response = self.client.get(url_for('delete_job', pk=1), follow_redirects = True)
         self.assert200(response)
-        self.assertNotIn(b'Name', response.data)
+        self.assertNotIn(b'CEO', response.data)
 
 
 class Test_delete_employment(TestBase):
     def test_create_get(self):
         response = self.client.get(url_for('delete_employment', pk=1), follow_redirects = True)
         self.assert200(response)
-        self.assertNotIn(b'Employee', response.data)                
+        self.assertNotIn(b'has been employed for the role', response.data)                
