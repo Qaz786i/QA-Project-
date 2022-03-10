@@ -16,9 +16,13 @@ class TestBase(TestCase):
 
     def setUp(self): #Run before each test
         db.create_all()
-        sample_employee = Employee(first_name = "Bruce", last_name = "Wayne", email = "bwayne@gotham.co.uk", address = "1 Gotham Road")
-        sample_job = Job(name = "CEO", details = "CEO of Wayne Enterprise")
+        sample_employee = Employee( first_name = "Bruce", last_name = "Wayne", email = "bwayne@gotham.co.uk", address = "1 Gotham Road")
+        sample_job = Job( name = "CEO", details = "CEO of Wayne Enterprise")
         sample_employment = Employment(fk_employee = 1, fk_job = 1)
+
+        sample_employee2 = Employee( first_name = "sample_name", last_name = "sample_last_name", email = "sample@sample.com", address = "sample road")
+        sample_job2 = Job( name = "sample_job", details = "sample_job_detail")
+        sample_employment2 = Employment(fk_employee = 2, fk_job = 2)
 
         db.session.add(sample_employee)
         db.session.add(sample_job)
@@ -100,13 +104,13 @@ class Test_update_employee(TestBase):
 
 class Test_update_job(TestBase):
     def test_create_get(self):
-        response = self.client.get(url_for('update_job', pk=2))
+        response = self.client.get(url_for('update_job', pk=1))
         self.assert200(response)
         self.assertIn(b'Job Title', response.data) 
 
     def test_create_post(self):
         response = self.client.post(
-            url_for('update_job', pk=2),
+            url_for('update_job', pk=1),
             data = dict(name = "Manager", details ="QA"),
             follow_redirects = True
         )
@@ -122,8 +126,8 @@ class Test_update_employment(TestBase):
 
     def test_create_post(self):
         response = self.client.post(
-            url_for('update_employment', pk=3),
-            data = dict(fk_employee = 2, fk_job = 2),
+            url_for('update_employment', pk=1),
+            data = dict(fk_employee = 1, fk_job = 1),
             follow_redirects = True
         )
         self.assert200(response)
@@ -133,14 +137,14 @@ class Test_delete_employee(TestBase):
     def test_create_get(self):
         response = self.client.get(url_for('delete_employee', pk=1), follow_redirects = True )
         self.assert200(response)
-        self.assertNotIn(b'Address', response.data)
+        self.assertNotIn(b'first_name', response.data)
 
 
 class Test_delete_job(TestBase):
     def test_create_get(self):
         response = self.client.get(url_for('delete_job', pk=1), follow_redirects = True)
         self.assert200(response)
-        self.assertNotIn(b'CEO', response.data)
+        self.assertNotIn(b'name', response.data)
 
 
 class Test_delete_employment(TestBase):
