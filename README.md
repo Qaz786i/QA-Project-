@@ -29,7 +29,7 @@ The Project aslo required a few of the CI pipeline stages being implemented. The
 ![Trello board](https://user-images.githubusercontent.com/99325859/157636066-a2f944f9-4c2f-4104-afad-b0d2aad9cbc4.png)
 Trello board can be accessed here https://trello.com/b/vaRB1pcm/qa-project
 
-![ci pipeline](https://user-images.githubusercontent.com/99325859/157317662-1bf5dcf9-5097-44dc-b1c2-30bd02ce83d8.png)
+![ci pipeline](https://user-images.githubusercontent.com/99325859/157665986-dd55a1c5-8ce0-46d8-a90f-04435bc7cc4c.png)
 
 For version control I decided to use git hosted by github. This version control host allows easy updating and saving changes to the project via its commit command which you can also leave a note for. GitHub is where the commit's and file are sent and is a repository hosting service.
 
