@@ -29,13 +29,13 @@ The Project aslo required a few of the CI pipeline stages being implemented. The
 ![Trello board](https://user-images.githubusercontent.com/99325859/157636066-a2f944f9-4c2f-4104-afad-b0d2aad9cbc4.png)
 Trello board can be accessed here https://trello.com/b/vaRB1pcm/qa-project
 
-![ci pipeline](https://user-images.githubusercontent.com/99325859/157665986-dd55a1c5-8ce0-46d8-a90f-04435bc7cc4c.png)
-
 For version control I decided to use git hosted by github. This version control host allows easy updating and saving changes to the project via its commit command which you can also leave a note for. GitHub is where the commit's and file are sent and is a repository hosting service.
 
 For the development environment python3 was used in this project. As we used a virtual environment on python3 it made sense to use flask for the web development as python and flask go hand in hand.
 
-Jenkins is what was intended to be used to run the app on however due to a internal Server issue it was not possible to do this. Ideally the app would have its own independent server from which the app would run on. 
+Jenkins is what I used for my build server. This allowed me to run my app from an external server and provided the automation building off the app. THe testing was done using test.sh with a freestyle project where gunicorn was used to run the app once the tests were complete. Below you can see an illistration of the pipeline I have used is this project  
+
+![ci pipeline](https://user-images.githubusercontent.com/99325859/157665986-dd55a1c5-8ce0-46d8-a90f-04435bc7cc4c.png)
 
 ## Risk Assesment
 
