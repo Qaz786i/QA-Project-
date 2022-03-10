@@ -35,6 +35,7 @@ For version control I decided to use git hosted by github. This version control 
 
 For the development environment python3 was used in this project. As we used a virtual environment on python3 it made sense to use flask for the web development as python and flask go hand in hand.
 
+Jenkins is what was intended to be used to run the app on however due to a public keys issue on the ssh terminal it was not possible to do this. Ideally the app would have its own independent server from which the app would run on. 
 
 ## Risk Assesment
 
