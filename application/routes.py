@@ -94,6 +94,10 @@ def update_employee(pk):
 @app.route('/delete-employee/<int:pk>', methods = ['GET', 'POST'])
 def delete_employee(pk):
     employee = Employee.query.get(pk)
+    employments = Employment.query.filter_by(fk_employee = employee.pk).all()
+    for employment in employments:
+        db.session.delete(employment)
+        db.session.commit()    
     db.session.delete(employee)
     db.session.commit()
     return redirect(url_for('home'))
@@ -112,6 +116,10 @@ def update_job(pk):
 @app.route('/delete-job/<int:pk>', methods = ['GET', 'POST'])
 def delete_job(pk):
     job = Job.query.get(pk)
+    employments = Employment.query.filter_by(fk_job = job.pk).all()
+    for employment in employments:
+        db.session.delete(employment)
+        db.session.commit()
     db.session.delete(job)
     db.session.commit()
     return redirect(url_for('home'))        
