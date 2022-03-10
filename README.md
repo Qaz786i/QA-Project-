@@ -51,8 +51,11 @@ The risk assesment shows some of the control measures implemented to reduce any 
 Testing the app is a crucial part of the development of the app. The tests were carried out in two different ways:
 
 - The first test was carried out within the app with unit testing. This allowed for me to check that each of the CRUD functions were working as intended
-- The second test was an intergration test which allows me to see how the app performs in a live-environment where hundred of thousands of interactions withint the app could be happening every second. Again this would help test if the functionality of the app were working as intended. 
+- The second test was an intergration test which allows me to see how the app performs in a live-environment where hundred of thousands of interactions withint the app could be happening every second. Again this would help test if the functionality of the app were working as intended. As seen by the screenshot below the jenkins test concluded it as a success
+![jenkins test result](https://user-images.githubusercontent.com/99325859/157643398-a93f71d9-f484-46d5-aca9-a03ed16e277e.png)
 
+The coverage report shows the % of all codes which were tested and provides a html document detailing the coverage of the test. As seen below the coverage was a 100% meaning everything in the project was tested for failure and everything has been checked and been ticked of to successful 
+![coverage](https://user-images.githubusercontent.com/99325859/157643413-67ca00a4-e575-4cce-9212-e16e5b2f3db0.png)
 
 
 # The App:
@@ -72,7 +75,9 @@ Like the previous create page the create job and crete employment will do the sa
 
 ## Updates:
 
-
+10.03.2022
+ - Deleting a job or employee will now delete its related employment saving having to delete more than 1 entity
 
 ## Current Issues:
 
+- Hard to validate employees in employement with the same name as employement doesnt give employee information just a name
