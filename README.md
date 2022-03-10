@@ -24,8 +24,17 @@ The design I have chosen for my web app is a Recruitment Agency's Employee Datab
 
 ## CI Pipeline:
 
+The Project aslo required a few of the CI pipeline stages being implemented. These were in the form of tracking, version control, development environment and build server. For tracking my project I used Trello for their tracking board. I created user stories and tasks which helped me track what I was currently doing, what needed doing and what needed reviewing and I could check off what was completed. Here is a snapchat of my board near the end of the project.
+
+![Trello board](https://user-images.githubusercontent.com/99325859/157636066-a2f944f9-4c2f-4104-afad-b0d2aad9cbc4.png)
+Trello board can be accessed here https://trello.com/b/vaRB1pcm/qa-project
 
 ![ci pipeline](https://user-images.githubusercontent.com/99325859/157317662-1bf5dcf9-5097-44dc-b1c2-30bd02ce83d8.png)
+
+For version control I decided to use git hosted by github. This version control host allows easy updating and saving changes to the project via its commit command which you can also leave a note for. GitHub is where the commit's and file are sent and is a repository hosting service.
+
+For the development environment python3 was used in this project. As we used a virtual environment on python3 it made sense to use flask for the web development as python and flask go hand in hand.
+
 
 ## Risk Assesment
 
