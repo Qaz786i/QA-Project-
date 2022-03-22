@@ -1,4 +1,4 @@
-pipeline {
+pipeline  {
     agents any
     stages {
         stage('test') {
@@ -8,8 +8,8 @@ pipeline {
         }
     }
     post {
-        always{
-            archiveArtifcats: "htmlcov/*"
+        always  {
+            archiveArtifacts: "htmlcov/*"
         }
     }
 }
