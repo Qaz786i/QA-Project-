@@ -3,7 +3,7 @@ pipeline  {
     stages {
         stage('test') {
             steps {
-                sh "bash flask-app/test_basic.sh"
+                sh "python3 tests/test_app.py"
             }
         }
     }
